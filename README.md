@@ -91,7 +91,7 @@ We welcome contributions! To contribute:
 
 ## License
 
-This project is licensed under the **MIT License**. Feel free to use and modify it for personal and commercial purposes.
+This project is licensed under the **MIT [LICENCE](LICENSE)**. Feel free to use and modify it for personal and commercial purposes.
 
 ---
 
