@@ -18,15 +18,15 @@
         {
             id: 1,
             sender: 'Dr. Amol Vasudeva',
-            avatar: 'assets/images/message_avatar1.jpg',
-            preview: 'Assignment due next week.',
+            avatar: 'assets/images/message_avatar2.jpg',
+            preview: 'Assignment due today.',
             time: '10 min ago',
             unread: true
         },
         {
             id: 2,
             sender: 'Faisal Firdous',
-            avatar: 'assets/images/message_avatar2.jpg',
+            avatar: 'assets/images/message_avatar3.jpg',
             preview: 'Test coming up on Friday.',
             time: '50 min ago',
             unread: true
@@ -34,23 +34,23 @@
         {
             id: 3,
             sender: 'Kuntal Sarkar',
-            avatar: 'assets/images/message_avatar3.jpg',
-            preview: 'Meeting scheduled for tomorrow at 10 AM.',
+            avatar: 'assets/images/message_avatar5.jpg',
+            preview: 'Short meeting today.',
             time: '2 hour ago',
-            unread: false
+            unread: true
         },
         {
             id: 4,
             sender: 'PB Barman',
-            avatar: 'assets/images/message_avatar4.jpg',
-            preview: 'P1 Quiz on Friday',
+            avatar: 'assets/images/message_avatar2.jpg',
+            preview: 'P1 Quiz on Friday.',
             time: '8 hour ago',
             unread: true
         },
         {
             id: 5,
             sender: 'Deler Singh',
-            avatar: 'assets/images/message_avatar5.jpg',
+            avatar: 'assets/images/message_avatar3.jpg',
             preview: 'Project submission deadline extended.',
             time: '1 day ago',
             unread: true
@@ -58,8 +58,8 @@
         {
             id: 6,
             sender: 'Dr. Aman Sharma',
-            avatar: 'assets/images/message_avatar6.jpg',
-            preview: 'Reminder: Team meeting at 3 PM.',
+            avatar: 'assets/images/message_avatar5.jpg',
+            preview: 'Reminder! Team meeting at 3 PM.',
             time: '2 Days ago',
             unread: false
         }

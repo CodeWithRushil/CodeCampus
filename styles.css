@@ -1,16 +1,10 @@
-/* ====================================================
-   Name: Coding Journey Dashboard
-   Author: JohnDev19
-   Last Update: December 2024
-   License: MIT
-==================================================== */
 :root {
   --primary-color: #3b82f6;
   --secondary-color: #8b5cf6;
   --accent-color: #40d675;
-  --background-dark: #0f172a;
-  --card-background: rgba(26,41,66,0.202);
-  --toggle-background: rgba(26,41,66,0.575);
+  --background-dark: #000000;
+  --card-background: rgba(36, 36, 43, 0.202);
+  --toggle-background: rgba(0, 0, 0, 0.575);
   --text-primary: #e2e8f0;
   --text-secondary: #94a3b8;
   --border-radius-lg: 20px;
@@ -42,7 +36,7 @@ body {
 /* Sidebar */
 .sidebar {
   width: var(--sidebar-width);
-  background: rgba(26, 41, 66, 0.8);
+  background:   ;
   backdrop-filter: blur(15px);
   padding: 2rem;
   border-right: 1px solid rgba(255,255,255,0.1);
@@ -57,14 +51,15 @@ body {
 }
 
 .sidebar-logo {
+  margin-right: 1rem;
   display: flex;
   align-items: center;
   margin-bottom: 2rem;
 }
 
 .sidebar-logo img {
-  width: 50px;
-  margin-right: 1rem;
+  width: 60px;
+  margin-right: 0.25rem;
   border-radius: 50%;
 }
 
@@ -84,7 +79,8 @@ body {
 }
 
 .sidebar-nav-item:hover, .sidebar-nav-item.active {
-  background: rgba(255,255,255,0.1);
+  background: rgba(36, 36, 43, 0.202);
+  border-radius: var(--border-radius-lg);
   transform: translateX(10px);
 }
 
@@ -520,13 +516,13 @@ body {
 }
 
 .activity-low {
-  background-color: rgba(59, 130, 246, 0.3);
+  background-color: rgba(64, 214, 117, 0.3);
 }
 .activity-medium {
-  background-color: rgba(59, 130, 246, 0.5);
+  background-color: rgba(64, 214, 117, 0.6);
 }
 .activity-high {
-  background-color: rgba(59, 130, 246, 0.8);
+  background-color: rgba(64, 214, 117, 0.9);
 }
 
 /* Leaderboard */
@@ -586,7 +582,7 @@ body {
 
 /* Message bar */
 .message-badge {
-  background-color: var(--accent-color);
+  background-color: var(--primary-color);
   color: white;
   border-radius: 50%;
   padding: 0.2rem 0.5rem;
@@ -600,13 +596,14 @@ body {
   right: 0;
   width: 350px;
   height: 100vh;
-  background: rgba(26, 41, 66, 0.9);
+  background: var(--background-dark);
   backdrop-filter: blur(15px);
   transform: translateX(100%);
   transition: var(--transition-smooth);
   z-index: 1500;
   display: flex;
   flex-direction: column;
+  border-left: 1px solid rgba(255,255,255,0.1);
 }
 
 .messages-container.active {
@@ -618,7 +615,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .messages-list {
