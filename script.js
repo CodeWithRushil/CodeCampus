@@ -1,11 +1,3 @@
-// ====================================================
-//   Name: Coding Journey Dashboard
-//   Author: JohnDev19
-//   Last Update: December 2024
-//   License: MIT
-// ====================================================
-///////////////////////////////////////////////////////
-// AOS
 AOS.init({
   duration: 1000,
   once: true,
