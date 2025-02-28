@@ -17,50 +17,50 @@
     const messages = [
         {
             id: 1,
-            sender: 'Alice Johnson',
+            sender: 'Dr. Amol Vasudeva',
             avatar: 'assets/images/message_avatar1.jpg',
-            preview: 'Hey, can we discuss the project timeline?',
-            time: '2 min ago',
+            preview: 'Assignment due next week.',
+            time: '10 min ago',
             unread: true
         },
         {
             id: 2,
-            sender: 'Bob Smith',
+            sender: 'Faisal Firdous',
             avatar: 'assets/images/message_avatar2.jpg',
-            preview: 'The latest code changes look great!',
-            time: '15 min ago',
+            preview: 'Test coming up on Friday.',
+            time: '50 min ago',
             unread: true
         },
         {
             id: 3,
-            sender: 'Charlie Brown',
+            sender: 'Kuntal Sarkar',
             avatar: 'assets/images/message_avatar3.jpg',
             preview: 'Meeting scheduled for tomorrow at 10 AM.',
-            time: '1 hour ago',
+            time: '2 hour ago',
             unread: false
         },
         {
             id: 4,
-            sender: 'Diana Rodriguez',
+            sender: 'PB Barman',
             avatar: 'assets/images/message_avatar4.jpg',
-            preview: 'Can you review the design mockups?',
-            time: '45 min ago',
+            preview: 'P1 Quiz on Friday',
+            time: '8 hour ago',
             unread: true
         },
         {
             id: 5,
-            sender: 'Ethan Kim',
+            sender: 'Deler Singh',
             avatar: 'assets/images/message_avatar5.jpg',
-            preview: 'Deployment script needs your attention.',
-            time: '3 hours ago',
+            preview: 'Project submission deadline extended.',
+            time: '1 day ago',
             unread: true
         },
         {
             id: 6,
-            sender: 'Fiona Watson',
+            sender: 'Dr. Aman Sharma',
             avatar: 'assets/images/message_avatar6.jpg',
-            preview: 'Great job on the last sprint!',
-            time: 'Yesterday',
+            preview: 'Reminder: Team meeting at 3 PM.',
+            time: '2 Days ago',
             unread: false
         }
     ];
