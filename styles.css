@@ -2,6 +2,7 @@
   --primary-color: #3b82f6;
   --secondary-color: #8b5cf6;
   --accent-color: #40d675;
+  --accent-color2: #2c8a4d;
   --background-dark: #000000;
   --card-background: rgba(36, 36, 43, 0.202);
   --toggle-background: rgba(0, 0, 0, 0.575);
@@ -260,7 +261,7 @@ body {
 }
 
 .status-completed {
-  background-color: var(--accent-color);
+  background-color: var(--accent-color2);
 }
 
 .status-not-started {
