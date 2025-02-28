@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     .catch((error) => console.error("Error fetching LeetCode data:", error));
 
   const quickStatsData = [
-    { value: leetCodeData.totalSolved, label: "LeetCode Questions Completed", delay: 100 },
-    { value: leetCodeData.ranking, label: "LeetCode Ranking", delay: 200 },
+    { value: leetCodeData.totalSolved, label: "Questions Completed", delay: 100 },
+    { value: leetCodeData.ranking, label: "Best Ranking", delay: 200 },
     { value: "87%", label: "Overall Attendance", delay: 300 },
     { value: 5, label: "Certifications", delay: 400 },
   ];
