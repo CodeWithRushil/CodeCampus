@@ -276,19 +276,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // Upcoming deadlines
   const deadlineList = document.getElementById('deadline-list');
   const deadlines = [{
-    task: 'Project Proposal', date: '2024-07-15'
+    task: 'Project Proposal', date: '2025-07-15'
   },
     {
-      task: 'Code Review', date: '2024-07-20'
+      task: 'Code Review', date: '2025-07-20'
     },
     {
-      task: 'Final Submission', date: '2024-07-31'
+      task: 'Final Submission', date: '2025-07-31'
     },
     {
-      task: 'Team Presentation', date: '2024-08-05'
+      task: 'Team Presentation', date: '2025-08-05'
     },
     {
-      task: 'Client Meeting', date: '2024-08-10'
+      task: 'Client Meeting', date: '2025-08-10'
     }];
 
   deadlines.forEach(deadline => {
@@ -307,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
     course: 'Advanced React Patterns', difficulty: 'Intermediate'
   },
     {
-      course: 'Machine Learning Fundamentals', difficulty: 'Advanced'
+      course: 'Introduction to Algorithm', difficulty: 'Advanced'
     },
     {
       course: 'GraphQL API Design', difficulty: 'Intermediate'
@@ -439,31 +439,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const leaderboardList = document.getElementById('leaderboard-list');
   const leaderboardData = [{
     rank: 1,
-    name: 'Ethan',
+    name: 'Lakshay',
     score: 2500,
     avatar: 'assets/images/message_avatar5.jpg'
   },
     {
       rank: 2,
-      name: 'Charlie',
+      name: 'Choudhary',
       score: 2350,
       avatar: 'assets/images/message_avatar3.jpg'
     },
     {
       rank: 3,
-      name: 'Alice',
+      name: 'Ramanujam Reddy',
       score: 2200,
       avatar: 'assets/images/message_avatar1.jpg'
     },
     {
       rank: 4,
-      name: 'Fiona',
+      name: 'Poororava Maitre',
       score: 2100,
       avatar: 'assets/images/message_avatar6.jpg'
     },
     {
       rank: 5,
-      name: 'Diana',
+      name: 'Suneha',
       score: 2000,
       avatar: 'assets/images/message_avatar4.jpg'
     }];
