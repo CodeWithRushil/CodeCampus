@@ -697,3 +697,21 @@ body {
   border: var(--table-border) solid white;
   padding: .5em
 }
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(36, 36, 43, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;  
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5f9cff;
+}
+.messages-list::-webkit-scrollbar {
+  width: 0px;
+}

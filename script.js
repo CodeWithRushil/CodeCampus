@@ -407,7 +407,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Sidebar
 
   let previousActiveSection = "dashboard";
-  const ignoreList = ["messages"];
+  const ignoreList = ["messages", "settings", "results", "projects", "progress"];
   document.querySelectorAll(".sidebar-nav-item").forEach((item) => {
     item.addEventListener("click", function () {
       document
