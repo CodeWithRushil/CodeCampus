@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CodeCampus by Divya Drishti</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" href="./assets/images/CodeCampusLogo.png" type="image/x-icon">
@@ -50,139 +56,270 @@
                 </li>
             </ul>
 
-            <div class="user-profile">
-                <img src="assets/images/me.jpg" alt="User Avatar" class="user-avatar">
-                <span>Divya Drishti</span>
-            </div>
-        </aside>
+        <div class="user-profile">
+          <img
+            src="assets/images/me.jpg"
+            alt="User Avatar"
+            class="user-avatar"
+          />
+          <span>Divya Drishti</span>
+        </div>
+      </aside>
 
-        <!-- Main content -->
-        <main class="main-content">
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
+      <!-- Main content -->
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <main class="main-content">
+        <div id="dashboard" class="active">
+          <div class="quick-stats">
+            
+          </div>
 
-            <div class="quick-stats">
-                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stat-value">42</div>
-                    <div class="stat-label">Completed Courses</div>
-                </div>
-                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stat-value">18</div>
-                    <div class="stat-label">Active Projects</div>
-                </div>
-                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stat-value">87%</div>
-                    <div class="stat-label">Overall Progress</div>
-                </div>
-                <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="stat-value">5</div>
-                    <div class="stat-label">Certifications</div>
-                </div>
-            </div>
-
-            <div class="content-grid">
-                <!-- Learning progress card -->
-                <div class="dashboard-card" data-aos="fade-up">
-                    <h3><i class="fas fa-graduation-cap"></i> Learning Progress</h3>
-                    <canvas id="learningChart"></canvas>
-                    <div class="progress-bar">
-                        <div class="progress-bar-fill" style="width: 75%"></div>
-                    </div>
-                </div>
-
-                <!-- Project status card -->
-                <div class="dashboard-card" data-aos="fade-up" data-aos-delay="100">
-                    <h3><i class="fas fa-tasks"></i> Active Projects</h3>
-                    <ul id="project-list" class="task-list"></ul>
-                </div>
-
-                <!-- Skill metrics card -->
-                <div class="dashboard-card" data-aos="fade-up" data-aos-delay="200">
-                    <h3><i class="fas fa-chart-pie"></i> Skill Metrics</h3>
-                    <canvas id="skillChart"></canvas>
-                </div>
-
-                <!-- Recent achievements card -->
-                <div class="dashboard-card" data-aos="fade-up" data-aos-delay="300">
-                    <h3><i class="fas fa-award"></i> Recent Achievements</h3>
-                    <div class="achievement-list">
-                        <div class="achievement-item">
-                            <i class="fas fa-code"></i> Code Ninja
-                        </div>
-                        <div class="achievement-item">
-                            <i class="fas fa-bug"></i> Bug Squasher
-                        </div>
-                        <div class="achievement-item">
-                            <i class="fas fa-fire"></i> 7-Day Streak
-                        </div>
-                        <div class="achievement-item">
-                            <i class="fas fa-star"></i> Top Contributor
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Code progression Line chart -->
-                <div class="dashboard-card" data-aos="fade-up" data-aos-delay="1000">
-                  <h3><i class="fas fa-code"></i> Code Progression Metrics</h3>
-                  <canvas id="codeProgressionChart">
-                  </canvas>
-              <div class="chart-description">
-                 <p>Visualizing code volume and complexity growth over time</p>
-                 </div>
+          <div class="content-grid">
+            <!-- Learning progress card -->
+            <div class="dashboard-card" data-aos="fade-up">
+              <h3><i class="fas fa-graduation-cap"></i> Learning Progress</h3>
+              <canvas id="learningChart"></canvas>
+              <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 75%"></div>
               </div>
-              
-                <!-- Upcoming deadlines card -->
-                <div class="dashboard-card" data-aos="fade-up" data-aos-delay="400">
-                    <h3><i class="fas fa-calendar-alt"></i> Upcoming Deadlines</h3>
-                    <ul id="deadline-list" class="task-list"></ul>
-                </div>
-
-                <!-- Learning recommendations card -->
-                <div class="dashboard-card" data-aos="fade-up" data-aos-delay="500">
-                    <h3><i class="fas fa-lightbulb"></i> Recommended for You</h3>
-                    <ul id="recommendation-list" class="task-list"></ul>
-                </div>
-
-                <!-- Coding activity calendar -->
-                <div class="dashboard-card" data-aos="fade-up" data-aos-delay="600">
-                    <h3><i class="fas fa-code"></i> Coding Activity</h3>
-                    <div id="coding-calendar" class="coding-calendar"></div>
-                </div>
-
-                <!-- Leaderboard -->
-                <div class="dashboard-card" data-aos="fade-up" data-aos-delay="700">
-                    <h3><i class="fas fa-crown"></i> Hackerrank</h3>
-                    <ul id="leaderboard-list" class="leaderboard-list"></ul>
-                </div>
-
-                <!-- Resource links -->
-                <div class="dashboard-card" data-aos="fade-up" data-aos-delay="800">
-                    <h3><i class="fas fa-link"></i> Useful Resources</h3>
-                    <ul class="resource-list">
-                        <li class="resource-item"><a href="#" class="resource-link">MDN Web Docs</a></li>
-                        <li class="resource-item"><a href="#" class="resource-link">freeCodeCamp</a></li>
-                        <li class="resource-item"><a href="#" class="resource-link">Stack Overflow</a></li>
-                        <li class="resource-item"><a href="#" class="resource-link">GitHub</a></li>
-                    </ul>
-                </div>
             </div>
-        </main>
+
+            <!-- Project status card -->
+            <div class="dashboard-card" data-aos="fade-up" data-aos-delay="100">
+              <h3><i class="fas fa-tasks"></i> Active Projects</h3>
+              <ul id="project-list" class="task-list"></ul>
+            </div>
+
+            <!-- Skill metrics card -->
+            <div class="dashboard-card" data-aos="fade-up" data-aos-delay="200">
+              <h3><i class="fas fa-chart-pie"></i> Skill Metrics</h3>
+              <canvas id="skillChart"></canvas>
+            </div>
+
+            <!-- Recent achievements card -->
+            <div class="dashboard-card" data-aos="fade-up" data-aos-delay="300">
+              <h3><i class="fas fa-award"></i> Recent Achievements</h3>
+              <div class="achievement-list">
+                <div class="achievement-item">
+                  <i class="fas fa-code"></i> Code Ninja
+                </div>
+                <div class="achievement-item">
+                  <i class="fas fa-bug"></i> Bug Squasher
+                </div>
+                <div class="achievement-item">
+                  <i class="fas fa-fire"></i> 7-Day Streak
+                </div>
+                <div class="achievement-item">
+                  <i class="fas fa-star"></i> Top Contributor
+                </div>
+              </div>
+            </div>
+
+            <!-- Code progression Line chart -->
+            <div
+              class="dashboard-card"
+              data-aos="fade-up"
+              data-aos-delay="1000"
+            >
+              <h3><i class="fas fa-code"></i> Code Progression Metrics</h3>
+              <canvas id="codeProgressionChart"> </canvas>
+              <div class="chart-description">
+                <p>Visualizing code volume and complexity growth over time</p>
+              </div>
+            </div>
+
+            <!-- Upcoming deadlines card -->
+            <div class="dashboard-card" data-aos="fade-up" data-aos-delay="400">
+              <h3><i class="fas fa-calendar-alt"></i> Upcoming Deadlines</h3>
+              <ul id="deadline-list" class="task-list"></ul>
+            </div>
+
+            <!-- Learning recommendations card -->
+            <div class="dashboard-card" data-aos="fade-up" data-aos-delay="500">
+              <h3><i class="fas fa-lightbulb"></i> Recommended for You</h3>
+              <ul id="recommendation-list" class="task-list"></ul>
+            </div>
+
+            <!-- Coding activity calendar -->
+            <div class="dashboard-card" data-aos="fade-up" data-aos-delay="600">
+              <h3><i class="fas fa-code"></i> Coding Activity</h3>
+              <div id="coding-calendar" class="coding-calendar"></div>
+            </div>
+
+            <!-- Leaderboard -->
+            <div class="dashboard-card" data-aos="fade-up" data-aos-delay="700">
+              <h3><i class="fas fa-crown"></i> Hackerrank</h3>
+              <ul id="leaderboard-list" class="leaderboard-list"></ul>
+            </div>
+
+            <!-- Resource links -->
+            <div class="dashboard-card" data-aos="fade-up" data-aos-delay="800">
+              <h3><i class="fas fa-link"></i> Useful Resources</h3>
+              <ul class="resource-list">
+                <li class="resource-item">
+                  <a href="#" class="resource-link">MDN Web Docs</a>
+                </li>
+                <li class="resource-item">
+                  <a href="#" class="resource-link">freeCodeCamp</a>
+                </li>
+                <li class="resource-item">
+                  <a href="#" class="resource-link">Stack Overflow</a>
+                </li>
+                <li class="resource-item">
+                  <a href="#" class="resource-link">GitHub</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="attendance">
+          <h1>Attendance</h1>
+          <table
+            role="table"
+            class="attendance-table"
+            style="table-layout: auto"
+          >
+            <!---->
+            <thead role="rowgroup" class="p-datatable-thead">
+              <tr class="ng-star-inserted">
+                <th>Sl.No</th>
+                <th>Subject Code</th>
+                <!----><!----><!---->
+                <th>Current L(%)</th>
+                <th>Current T(%)</th>
+                <th>Current P(%)</th>
+                <th>Overall LTP(%)</th>
+              </tr>
+              <!---->
+            </thead>
+            <!---->
+            <tbody role="rowgroup" class="p-element p-datatable-tbody">
+              <!---->
+              <tr class="ng-star-inserted">
+                <td>1</td>
+                <td>ENGINEERING GRAPHICS(18B17GE173)</td>
+                <!----><!----><!---->
+                <td><a class="mylink"></a></td>
+                <td><a class="mylink"></a></td>
+                <td><a class="mylink">83.3</a></td>
+                <td><a class="mylink">83.3</a></td>
+              </tr>
+              <!----><!----><!----><!----><!----><!---->
+              <tr class="ng-star-inserted">
+                <td>2</td>
+                <td>ENGINEERING PHYSICS-II(18B11PH211)</td>
+                <!----><!----><!---->
+                <td><a class="mylink">86.7</a></td>
+                <td><a class="mylink"></a></td>
+                <td><a class="mylink"></a></td>
+                <td><a class="mylink">86.7</a></td>
+              </tr>
+              <!----><!----><!----><!----><!----><!---->
+              <tr class="ng-star-inserted">
+                <td>3</td>
+                <td>DATA STRUCTURES AND ALGORITHMS LAB(18B17CI271)</td>
+                <!----><!----><!---->
+                <td><a class="mylink"></a></td>
+                <td><a class="mylink"></a></td>
+                <td><a class="mylink">100</a></td>
+                <td><a class="mylink">100</a></td>
+              </tr>
+              <!----><!----><!----><!----><!----><!---->
+              <tr class="ng-star-inserted">
+                <td>4</td>
+                <td>ENGINEERING PHYSICS LAB-II(18B17PH271)</td>
+                <!----><!----><!---->
+                <td><a class="mylink"></a></td>
+                <td><a class="mylink"></a></td>
+                <td><a class="mylink">100</a></td>
+                <td><a class="mylink">100</a></td>
+              </tr>
+              <!----><!----><!----><!----><!----><!---->
+              <tr class="ng-star-inserted">
+                <td>5</td>
+                <td>
+                  UNIVERSAL HUMAN VALUES II- UNDERSTANDING HARMONY(23B11HS211)
+                </td>
+                <!----><!----><!---->
+                <td><a class="mylink">90.9</a></td>
+                <td><a class="mylink">83.3</a></td>
+                <td><a class="mylink"></a></td>
+                <td><a class="mylink">88.2</a></td>
+              </tr>
+              <!----><!----><!----><!----><!----><!---->
+              <tr class="ng-star-inserted">
+                <td>6</td>
+                <td>PROFESSIONAL COMMUNICATION PRACTICES(23B11HS212)</td>
+                <!----><!----><!---->
+                <td><a class="mylink"></a></td>
+                <td><a class="mylink"></a></td>
+                <td><a class="mylink">71.4</a></td>
+                <td><a class="mylink">71.4</a></td>
+              </tr>
+              <!----><!----><!----><!----><!----><!---->
+              <tr class="ng-star-inserted">
+                <td>7</td>
+                <td>PROJECT-II(24B19CI291)</td>
+                <!----><!----><!---->
+                <td><a class="mylink"></a></td>
+                <td><a class="mylink"></a></td>
+                <td><a class="mylink">0</a></td>
+                <td><a class="mylink">0</a></td>
+              </tr>
+              <!----><!----><!----><!----><!----><!---->
+              <tr class="ng-star-inserted">
+                <td>8</td>
+                <td>DATA STRUCTURES AND ALGORITHMS(24B11CI211)</td>
+                <!----><!----><!---->
+                <td><a class="mylink">100</a></td>
+                <td><a class="mylink"></a></td>
+                <td><a class="mylink"></a></td>
+                <td><a class="mylink">100</a></td>
+              </tr>
+              <!----><!----><!----><!----><!----><!---->
+              <tr class="ng-star-inserted">
+                <td>9</td>
+                <td>BASIC ELECTRICAL ENGINEERING(24B11EC211)</td>
+                <!----><!----><!---->
+                <td><a class="mylink">90</a></td>
+                <td><a class="mylink">100</a></td>
+                <td><a class="mylink"></a></td>
+                <td><a class="mylink">91.7</a></td>
+              </tr>
+              <!----><!----><!----><!----><!----><!---->
+              <tr class="ng-star-inserted">
+                <td>10</td>
+                <td>BASIC ELECTRICAL ENGINEERING LAB(24B17EC271)</td>
+                <!----><!----><!---->
+                <td><a class="mylink"></a></td>
+                <td><a class="mylink"></a></td>
+                <td><a class="mylink">80</a></td>
+                <td><a class="mylink">80</a></td>
+              </tr>
+              <!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+            </tbody>
+            <!----><!---->
+          </table>
+        </div>
+      </main>
     </div>
 
     <!-- Notification -->
     <div class="notification-center" id="notificationCenter"></div>
-    
+
     <div class="messages-container" id="messagesContainer">
-    <div class="messages-header">
+      <div class="messages-header">
         <h3>Messages</h3>
         <button class="close-messages" id="closeMessages">
-            <i class="fas fa-times"></i>
+          <i class="fas fa-times"></i>
         </button>
+      </div>
+      <div class="messages-list" id="messagesList"></div>
     </div>
-    <div class="messages-list" id="messagesList"></div>
-    </div>
+
     <script src="messages.js"></script>
-    <script src ="script.js"></script>
-    </body>
+    <script src="script.js"></script>
+  </body>
 </html>

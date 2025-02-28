@@ -330,10 +330,10 @@ body {
 }
 
 .quick-stats {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));;
   margin-bottom: 2rem;
-  gap: 0rem;
+  gap: 1em;
   flex-wrap: wrap;
 }
 
@@ -347,9 +347,7 @@ body {
   flex: 1;
   text-align: center;
   transition: var(--transition-smooth);
-  min-width: 200px;
-  max-width: 250px;
-  width: calc(25% - 1rem);
+  width: 100%;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
@@ -371,11 +369,6 @@ body {
   color: var(--text-secondary);
 }
 
-@media (max-width: 1200px) {
-  .stat-card {
-    width: calc(50% - 1rem);
-  }
-}
 
 @media (max-width: 768px) {
   .quick-stats {
@@ -677,4 +670,29 @@ body {
   color: var(--text-primary);
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+
+.main-content > div {
+  display: none
+}
+.main-content > div.active {
+  display: block;
+}
+
+#attendance > h1 {
+  width: max-content;
+  margin-inline: auto;
+  margin-bottom: 1em;
+  letter-spacing: .1em;
+}
+.attendance-table {
+    --table-border: .125em;
+    border: var(--table-border) solid white;
+    border-collapse: collapse;
+    overflow-x: auto;
+}
+.attendance-table :is(td, th) {
+  border: var(--table-border) solid white;
+  padding: .5em
 }
