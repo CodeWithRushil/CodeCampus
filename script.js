@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     .catch((error) => console.error("Error fetching LeetCode data:", error));
 
   const quickStatsData = [
-    { value: leetCodeData.totalSolved, label: "LeetCode Questions completed", delay: 100 },
-    { value: leetCodeData.ranking, label: "LeetCode rankings", delay: 200 },
+    { value: leetCodeData.totalSolved, label: "LeetCode Questions Completed", delay: 100 },
+    { value: leetCodeData.ranking, label: "LeetCode Ranking", delay: 200 },
     { value: "87%", label: "Overall Attendance", delay: 300 },
     { value: 5, label: "Certifications", delay: 400 },
   ];
@@ -511,31 +511,31 @@ document.addEventListener("DOMContentLoaded", async () => {
   const leaderboardData = [
     {
       rank: 1,
-      name: "Lakshay",
+      name: "Animesh Singh",
       score: 2500,
       avatar: "assets/images/message_avatar5.jpg",
     },
     {
       rank: 2,
-      name: "Choudhary",
+      name: "Srijan Saraswat",
       score: 2350,
       avatar: "assets/images/message_avatar3.jpg",
     },
     {
       rank: 3,
-      name: "Ramanujam Reddy",
+      name: "Yash Khatri",
       score: 2200,
-      avatar: "assets/images/message_avatar1.jpg",
+      avatar: "assets/images/message_avatar2.jpg",
     },
     {
       rank: 4,
-      name: "Poororava Maitre",
+      name: "Samson Vincent",
       score: 2100,
       avatar: "assets/images/message_avatar6.jpg",
     },
     {
       rank: 5,
-      name: "Suneha",
+      name: "Ayush Rawat",
       score: 2000,
       avatar: "assets/images/message_avatar4.jpg",
     },
