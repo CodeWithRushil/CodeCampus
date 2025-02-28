@@ -1,52 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!--================================================
-    Name: Coding Journey Dashboard
-    Author: JohnDev19
-    Last Update: December 2024
-    License: MIT
-=====================================================   
-    Table of Contents:
-       1. Blur Gradient Overlay
-       2. Dashboard Container
-          2.1 Sidebar
-              - Sidebar Logo
-              - Navigation Items
-              - User Profile
-          2.2 Main Content
-              - Quick Stats
-              - Content Grid
-                - Learning Progress Card
-                - Project Status Card
-                - Skill Metrics Card
-                - Recent Achievements Card
-                - Code Progression Metrics
-                - Upcoming Deadlines Card
-                - Learning Recommendations Card
-                - Coding Activity Calendar
-                - Leaderboard
-                - Useful Resources
-        3. Notification Center
-        4. Messages Container
-        5. External Scripts
-==================================================-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeCampus</title>
-    <!-- Google fonts -->
+    <title>CodeCampus by Divya Drishti</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- AOS library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="blur-gradient"></div>
+    <div></div>
     <div class="dashboard-container">
         <!-- Sidebar -->
         <aside class="sidebar" id="sidebar">
@@ -85,7 +51,7 @@
 
             <div class="user-profile">
                 <img src="assets/images/me.jpg" alt="User Avatar" class="user-avatar">
-                <span>Lakshay Goyal</span>
+                <span>Divya Drishti</span>
             </div>
         </aside>
 
@@ -115,7 +81,7 @@
             </div>
 
             <div class="content-grid">
-                <!-- Learning ptogress card -->
+                <!-- Learning progress card -->
                 <div class="dashboard-card" data-aos="fade-up">
                     <h3><i class="fas fa-graduation-cap"></i> Learning Progress</h3>
                     <canvas id="learningChart"></canvas>
