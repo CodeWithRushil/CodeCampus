@@ -1,10 +1,4 @@
-// ====================================================
-//   Name: Coding Journey Dashboard
-//   Author: JohnDev19
-//   Last Update: December 2024
-//   License: MIT
-// ==================================================== 
-///////////////////////////////////////////////////////
+
   document.addEventListener('DOMContentLoaded', () => {
     const messagesNav = document.querySelector('.messages-nav');
     const messagesContainer = document.getElementById('messagesContainer');
