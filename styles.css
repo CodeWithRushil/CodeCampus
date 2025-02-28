@@ -36,7 +36,7 @@ body {
 /* Sidebar */
 .sidebar {
   width: var(--sidebar-width);
-  background:   ;
+  background: var(--background-dark);
   backdrop-filter: blur(15px);
   padding: 2rem;
   border-right: 1px solid rgba(255,255,255,0.1);
