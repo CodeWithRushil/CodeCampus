@@ -715,3 +715,128 @@ body {
 .messages-list::-webkit-scrollbar {
   width: 0px;
 }
+
+/* Login page */
+
+.login-page-wrapper {
+  position: fixed;
+  z-index: 2000;
+  background: var(--background-dark);
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  /* padding: 1.5rem; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.login-page-wrapper.closed {
+  animation: remove-login 4s both;
+
+}
+ @keyframes remove-login {
+  from {
+    opacity: 1;
+    transform: none;
+  } to {
+    transform: translateY(-999em) scale(.7);
+    opacity: 0;
+  }
+ }
+.login-page-wrapper.active {
+  opacity: 1;
+  transform: none;
+}
+
+body:has(.login-page-wrapper.active) {
+  overflow: hidden;
+}
+.form-wrapper {
+  padding: 1.5rem;
+}
+.form-wrapper{
+  height: max-content;
+}
+
+.heading-wrapper {
+  display: grid;
+  place-content: center;
+  height: 100%;
+  padding: 1.5rem 4rem 1.5rem 4rem;
+  border-right: .25em solid hsl(0, 0%, 20%)
+}
+.login-logo {
+  margin-inline: auto;
+}
+.login-page-wrapper  h1{
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-align: center;
+}
+.login-form-wrapper {
+  display: grid;
+  place-items: center;
+  flex: 1;
+}
+.login-form {
+  width: clamp(20rem, 90%, 40rem);
+  display: grid;
+  font-size: 1.5rem;
+  margin-inline: auto;
+  gap: 2rem;
+  border: .5em solid hsl(0, 0%, 10%);
+  padding: clamp(.5rem, 5vw, 3rem);
+  height: max-content;
+  border-radius: .75em;
+}
+.login-form .input-wrapper {
+  display: grid;
+  gap: 1rem;
+  margin-inline: auto;
+  width: 100%;
+}
+.login-form input {
+  font-size: 1.25rem;
+  border: .25em solid hsl(0, 0%, 25%);
+  border-radius: .5em;
+  padding: .5rem 1em;
+  background: hsl(0, 0%, 25%);
+  color: white;
+}
+@media screen and (max-width: 60em) {
+  .login-form input {
+    width: 90%;
+  }
+  .login-page-wrapper {
+    flex-direction: column;
+    width: 100%;
+  }
+  .heading-wrapper {
+    border: 0;
+    height: max-content;
+    padding: 1.5rem;
+  }
+  .login-form-wrapper {
+    width: 100%;
+  }
+}
+.login-form input::placeholder {
+  color: rgba(255, 255, 255, 0.633);
+}
+.login-btn {
+  padding: .5em 2em;
+  width: max-content;
+  font-size: 1.25rem;
+  background: var(--primary-color);
+  color: white;
+  font-size: 1rem;
+  border: .25em solid hsl(217, 91%, 80%);
+  cursor: pointer;
+  border-radius: .5em;
+  font-weight: 700;
+  font-family: inherit;
+}
+.login-btn:hover {
+    background: hsl(217, 91%, 65%);;
+}
