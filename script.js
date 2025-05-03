@@ -544,4 +544,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     `;
     leaderboardList.appendChild(listItem);
   });
+  document.querySelector(".login-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    document.querySelector(".login-page-wrapper").classList.add("closed");
+  })
 });
