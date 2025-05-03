@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const typingIndicator = showTypingIndicator();
         
         try {
-            const response = await fetch('http://localhost:11434/api/generate', {
+            const response = await fetch('https://8g3cx93p-11434.inc1.devtunnels.ms/api/generate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     prompt: message,
                     stream: false
                 })
-            });
+            }); 
             
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
