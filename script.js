@@ -625,6 +625,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
   document.querySelector(".login-form").addEventListener("submit", (e) => {
     e.preventDefault();
+
+    if (document.getElementById("password").value != "admin") {
+      alert("The password is incorrect!");
+      return;
+    }
     document.querySelector(".login-page-wrapper").classList.add("closed");
     document.querySelector(".login-page-wrapper").classList.remove("active");
   })
