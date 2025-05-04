@@ -11,7 +11,7 @@
     const messages = [
         {
             id: 1,
-            sender: 'Dr. Amol Vasudeva',
+            sender: 'Dr. Deepak Gupta',
             avatar: 'assets/images/message_avatar2.jpg',
             preview: 'Assignment due today.',
             time: '10 min ago',
@@ -19,10 +19,10 @@
         },
         {
             id: 2,
-            sender: 'Faisal Firdous',
-            avatar: 'assets/images/message_avatar3.jpg',
-            preview: 'Test coming up on Friday.',
-            time: '50 min ago',
+            sender: 'Akshay Kumar',
+            avatar: 'assets/images/message_avatar2.jpg',
+            preview: 'P1 Quiz on Friday.',
+            time: '8 hour ago',
             unread: true
         },
         {
@@ -35,18 +35,10 @@
         },
         {
             id: 4,
-            sender: 'PB Barman',
-            avatar: 'assets/images/message_avatar2.jpg',
-            preview: 'P1 Quiz on Friday.',
-            time: '8 hour ago',
-            unread: true
-        },
-        {
-            id: 5,
-            sender: 'Deler Singh',
+            sender: 'Faisal Firdous',
             avatar: 'assets/images/message_avatar3.jpg',
-            preview: 'Project submission deadline extended.',
-            time: '1 day ago',
+            preview: 'Test coming up on Friday.',
+            time: '50 min ago',
             unread: true
         },
         {

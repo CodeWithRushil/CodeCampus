@@ -482,21 +482,100 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Coding activity calendar
   const calendarContainer = document.getElementById("coding-calendar");
+  const username = "Manik2375"; // GitHub username from the existing code
   const days = 35; // 5 weeks
 
-  for (let i = 0; i < days; i++) {
-    const day = document.createElement("div");
-    day.className = "calendar-day";
-    const activity = Math.random();
-    if (activity > 0.7) {
-      day.classList.add("activity-activity-high");
-    } else if (activity > 0.4) {
-      day.classList.add("activity-medium");
-    } else if (activity > 0.1) {
-      day.classList.add("activity-low");
+  async function fetchGitHubContributions() {
+    try {
+      const response = await fetch(`https://api.github.com/users/${username}/events/public`);
+      
+      if (!response.ok) {
+        throw new Error(`GitHub API error: ${response.status}`);
+      }
+      
+      const events = await response.json();
+      
+      // Create a contribution map for the last 35 days
+      const contributions = {};
+      const today = new Date();
+      
+      // Initialize all days with 0
+      for (let i = 0; i < days; i++) {
+        const date = new Date();
+        date.setDate(today.getDate() - i);
+        const dateStr = date.toISOString().split('T')[0];
+        contributions[dateStr] = 0;
+      }
+      
+      // Count contribution events
+      events.forEach(event => {
+        if (['PushEvent', 'PullRequestEvent', 'IssuesEvent', 'CreateEvent'].includes(event.type)) {
+          const date = event.created_at.split('T')[0];
+          if (contributions.hasOwnProperty(date)) {
+            contributions[date]++;
+          }
+        }
+      });
+      
+      return contributions;
+    } catch (error) {
+      console.error("Error fetching GitHub data:", error);
+      return null;
     }
-    calendarContainer.appendChild(day);
   }
+
+  // Clear the container
+  calendarContainer.innerHTML = '<div class="loading-indicator">Loading GitHub activity...</div>';
+  
+  // Fetch and render GitHub data
+  fetchGitHubContributions().then(contributions => {
+    // Clear container
+    calendarContainer.innerHTML = '';
+    
+    if (contributions) {
+      // Find max contribution count for color scaling
+      const maxCount = Math.max(1, ...Object.values(contributions));
+      
+      // Create calendar days in chronological order
+      Object.entries(contributions)
+        .sort((a, b) => new Date(a[0]) - new Date(b[0]))
+        .forEach(([date, count]) => {
+          const day = document.createElement("div");
+          day.className = "calendar-day";
+          day.title = `${date}: ${count} contributions`;
+          
+          if (count > 0) {
+            const ratio = count / maxCount;
+            if (ratio > 0.7) {
+              day.classList.add("activity-activity-high");
+            } else if (ratio > 0.3) {
+              day.classList.add("activity-medium");
+            } else {
+              day.classList.add("activity-low");
+            }
+          }
+          
+          calendarContainer.appendChild(day);
+        });
+    } else {
+      // Fallback to random data if GitHub API fails
+      for (let i = 0; i < days; i++) {
+        const day = document.createElement("div");
+        day.className = "calendar-day";
+        const activity = Math.random();
+        
+        if (activity > 0.7) {
+          day.classList.add("activity-activity-high");
+        } else if (activity > 0.4) {
+          day.classList.add("activity-medium");
+        } else if (activity > 0.1) {
+          day.classList.add("activity-low");
+        }
+        
+        calendarContainer.appendChild(day);
+      }
+    }
+  });
 
   // Leaderboard
   const leaderboardList = document.getElementById("leaderboard-list");
