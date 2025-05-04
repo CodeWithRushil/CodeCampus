@@ -5,7 +5,7 @@ AOS.init({
 
 document.addEventListener("DOMContentLoaded", async () => {
   const leetCodeData = await fetch(
-    "https://leetcode-stats-api.herokuapp.com/codewithrushil"
+    "https://leetcode-stats-api.herokuapp.com/Animesh0764"
   )
     .then((response) => response.json())
     .catch((error) => console.error("Error fetching LeetCode data:", error));

@@ -1,4 +1,3 @@
-// chatbot.js - Handles interaction with the deepseek r1 model
 document.addEventListener('DOMContentLoaded', () => {
     const chatbotToggle = document.getElementById('chatbotToggle');
     const chatbotContainer = document.getElementById('chatbotContainer');
@@ -8,7 +7,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatbotInput = document.getElementById('chatbotInput');
     const chatbotSendBtn = document.getElementById('chatbotSendBtn');
     
-    // Toggle chatbot visibility
+    // Configure Marked to handle LaTeX math expressions
+    const renderer = new marked.Renderer();
+    const originalParagraphRenderer = renderer.paragraph;
+    
+    // Setup marked options
+    marked.setOptions({
+        renderer: renderer,
+        highlight: function(code, language) {
+            return code;
+        },
+        pedantic: false,
+        gfm: true,
+        breaks: true,
+        sanitize: false,
+        smartypants: false,
+        xhtml: false
+    });
+    
     function toggleChatbot() {
         chatbotContainer.classList.toggle('active');
         if (chatbotContainer.classList.contains('active')) {
@@ -16,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // Add a message to the chat (from user or bot)
     function addMessage(content, isUser = false) {
         const messageElement = document.createElement('div');
         messageElement.className = isUser ? 'chatbot-message user-message' : 'chatbot-message bot-message';
@@ -27,17 +42,39 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const messageContent = document.createElement('div');
         messageContent.className = 'chatbot-message-content';
-        messageContent.textContent = content;
+        
+        // Process markdown if not a user message
+        if (!isUser) {
+            try {
+                // Use marked.js to parse markdown to HTML
+                messageContent.innerHTML = marked.parse(content);
+                
+                // Render LaTeX expressions after markdown is processed
+                renderMathInElement(messageContent, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false},
+                        {left: '\\(', right: '\\)', display: false},
+                        {left: '\\[', right: '\\]', display: true}
+                    ],
+                    throwOnError: false
+                });
+            } catch (error) {
+                console.error('Error parsing markdown or LaTeX:', error);
+                messageContent.textContent = content;
+            }
+        } else {
+            // For user messages, just display as plain text
+            messageContent.textContent = content;
+        }
         
         messageElement.appendChild(avatar);
         messageElement.appendChild(messageContent);
         chatbotMessages.appendChild(messageElement);
         
-        // Scroll to bottom
         chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
     }
     
-    // Show typing indicator while waiting for bot response
     function showTypingIndicator() {
         const typingElement = document.createElement('div');
         typingElement.className = 'chatbot-message bot-message typing-indicator';
@@ -56,12 +93,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return typingElement;
     }
     
-    // Send message to the deepseek r1 model via Ollama API
     async function sendToChatbot(message) {
         const typingIndicator = showTypingIndicator();
         
         try {
-            const response = await fetch('https://8g3cx93p-11434.inc1.devtunnels.ms/api/generate', {
+            const response = await fetch('http://localhost:11434/api/generate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -80,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
             const botReply = data.response;
 
-            // Remove typing indicator and add bot response
             typingIndicator.remove();
             
             addMessage(botReply.replace("<think>",  "").replace("</think>", ""), false);
@@ -88,13 +123,11 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Error communicating with deepseek model:', error);
             
-            // Remove typing indicator and add error message
             typingIndicator.remove();
             addMessage('Sorry, I encountered an error connecting to my brain. Please try again later.', false);
         }
     }
     
-    // Handle form submission
     chatbotForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const userMessage = chatbotInput.value.trim();
@@ -106,10 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // Event listeners
     chatbotToggle.addEventListener('click', toggleChatbot);
     closeChatbot.addEventListener('click', toggleChatbot);
     
-    // Initial greeting
     addMessage('Hi there! I\'m your CodeCampus AI assistant powered by deepseek. How can I help you today?', false);
 });

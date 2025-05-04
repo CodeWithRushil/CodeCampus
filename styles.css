@@ -884,8 +884,8 @@ body:has(.login-page-wrapper.active) {
   position: fixed;
   bottom: 100px;
   right: 30px;
-  width: 350px;
-  height: 500px;
+  width: min(90%, 30em);
+  height: 35em;
   background-color: #1e293b;
   border-radius: 15px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
@@ -1002,6 +1002,146 @@ body:has(.login-page-wrapper.active) {
 
 .user-message .chatbot-message-content {
   background-color: #10b981;
+}
+
+/* Markdown styling for bot messages */
+.bot-message .chatbot-message-content h1,
+.bot-message .chatbot-message-content h2,
+.bot-message .chatbot-message-content h3,
+.bot-message .chatbot-message-content h4,
+.bot-message .chatbot-message-content h5,
+.bot-message .chatbot-message-content h6 {
+  margin-top: 0.5em;
+  margin-bottom: 0.3em;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.bot-message .chatbot-message-content h1 {
+  font-size: 1.5em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.3em;
+}
+
+.bot-message .chatbot-message-content h2 {
+  font-size: 1.3em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.2em;
+}
+
+.bot-message .chatbot-message-content h3 {
+  font-size: 1.15em;
+}
+
+.bot-message .chatbot-message-content h4 {
+  font-size: 1.1em;
+}
+
+.bot-message .chatbot-message-content ul,
+.bot-message .chatbot-message-content ol {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 1.5em;
+}
+
+.bot-message .chatbot-message-content li {
+  margin: 0.25em 0;
+}
+
+.bot-message .chatbot-message-content a {
+  color: #4b9bff;
+  text-decoration: none;
+}
+
+.bot-message .chatbot-message-content a:hover {
+  text-decoration: underline;
+}
+
+.bot-message .chatbot-message-content code {
+  font-family: monospace;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.bot-message .chatbot-message-content pre {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  padding: 0.8em;
+  overflow: auto;
+  margin: 0.5em 0;
+}
+
+.bot-message .chatbot-message-content pre code {
+  background-color: transparent;
+  padding: 0;
+  white-space: pre;
+  display: block;
+}
+
+.bot-message .chatbot-message-content blockquote {
+  border-left: 4px solid rgba(255, 255, 255, 0.2);
+  margin-left: 0;
+  padding-left: 0.8em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.bot-message .chatbot-message-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.5em 0;
+}
+
+.bot-message .chatbot-message-content table th,
+.bot-message .chatbot-message-content table td {
+  padding: 0.4em 0.6em;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bot-message .chatbot-message-content table th {
+  background-color: rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+}
+
+.bot-message .chatbot-message-content hr {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  margin: 1em 0;
+}
+
+.bot-message .chatbot-message-content img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+/* Preserve some spacing in the content */
+.bot-message .chatbot-message-content p {
+  margin: 0.5em 0;
+}
+
+/* LaTeX Math Styling */
+.bot-message .chatbot-message-content .katex {
+  font-size: 1.1em;
+}
+
+.bot-message .chatbot-message-content .katex-display {
+  margin: 0.75em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5em 0;
+}
+
+.bot-message .chatbot-message-content .katex-display > .katex {
+  display: flex;
+  justify-content: center;
+}
+
+.bot-message .chatbot-message-content .katex-error {
+  color: #f44336;
+  white-space: normal;
+  font-size: 0.9em;
 }
 
 .chatbot-input-area {
