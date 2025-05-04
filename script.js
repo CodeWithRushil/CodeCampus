@@ -547,5 +547,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.querySelector(".login-form").addEventListener("submit", (e) => {
     e.preventDefault();
     document.querySelector(".login-page-wrapper").classList.add("closed");
+    document.querySelector(".login-page-wrapper").classList.remove("active");
   })
 });
